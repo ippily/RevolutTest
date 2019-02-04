@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G3025" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Currency" representedClassName=".Currency" syncable="YES" codeGenerationType="class">
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="latestCurrencies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LatestCurrencies" inverseName="currency" inverseEntity="LatestCurrencies" syncable="YES"/>
+    </entity>
+    <entity name="LatestCurrencies" representedClassName="LatestCurrencies" syncable="YES" codeGenerationType="class">
+        <attribute name="base" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currency" inverseName="latestCurrencies" inverseEntity="Currency" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Currency" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="LatestCurrencies" positionX="-54" positionY="9" width="128" height="90"/>
+    </elements>
+</model>
